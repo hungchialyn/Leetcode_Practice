@@ -22,3 +22,17 @@ int countPrimeSetBits(int left, int right) {
     }
     return res;
 }
+
+/*
+*****計算popcount的方式除了本篇寫的，
+還有使用x &= (x - 1)的方法。
+例：
+static int popcount(unsigned int x) {
+    int c = 0;
+    while (x) {
+        x &= (x - 1);
+        c++;
+    }
+    return c;
+}
+*/
