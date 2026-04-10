@@ -34,4 +34,25 @@ class Solution(object):
             abAND>>=1
             abOR>>=1
         
-        return res
+        return res&MASK
+
+# 正確解法 用 a^b 和 a&b
+class Solution(object):
+    def getSum(self, a, b):
+        """
+        :type a: int
+        :type b: int
+        :rtype: int
+        """
+        mask = 0xFFFFFFFF
+        intmax = 0x7FFFFFFF
+        a&=mask
+        b&=mask
+        while b:
+            carry = (a&b)<<1
+            a=(a^b)&mask
+            b=carry
+        if (a<=intmax):
+            return a
+        print(a^mask)
+        return ~(a^mask)
