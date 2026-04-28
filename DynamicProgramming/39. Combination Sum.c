@@ -24,7 +24,7 @@ void backtracing(int* candidates, int candidatesSize,
         path[pathSize] = candidates[i];
 
         backtracing(candidates, candidatesSize, 
-                    target - candidates[i], i, path, pathSize + 1, 
+                    target - candidates[i], i, path, pathSize + 1,  //從i開始（不是從start)
                     res, returnSize, returnColumnSizes);
     }
 }
