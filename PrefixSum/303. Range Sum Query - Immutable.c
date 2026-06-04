@@ -33,3 +33,4 @@ void numArrayFree(NumArray* obj) {
  * int param_1 = numArraySumRange(obj, left, right);
  
  * numArrayFree(obj);
+ */
